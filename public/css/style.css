@@ -1,0 +1,458 @@
+@import url('htpps://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    color: #ededed;
+    background-color: #343e3d;
+}
+.header{
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+.navbar a{
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: #00abf0;
+}
+
+.container{
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.left-perfil{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-color: #607466;
+    border-radius: 5px;
+}
+.left-perfil img{
+    max-width: 80px;
+    border-radius: 25%;
+}
+.nick-summoner{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+.center-summoner{
+    flex: 1;
+    height: 500px;
+    margin-left: 20px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nick-summoner button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 7px 7px 10px;
+    min-width: 100px;
+    min-height: 20px;
+    border-radius: 3px;
+    border-color: #ff4e50;
+    background-color: #ff4e50;
+    cursor: pointer;
+}
+.elo-icon img{
+    max-width: 100px;
+    display: flex;
+}
+.elo-summoner{
+    display: flex;
+    float: left;
+}
+.elo-summoner p{
+    display: flex;
+    float: right;
+}
+.tessste{
+    display: flex;
+    justify-content: flex;
+}
+.elo-summoner-stats{
+    display: flex;
+    float: right;
+    justify-content: flex-end;
+}
+.elo-txt{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 20px;
+}
+.elo-txt h5{
+    color: azure;
+}
+.soloq{
+    margin-top: 8px;
+    border-radius: 4px;
+    background-color: #607466;
+}
+.soloq .header{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    line-height: 35px;
+    padding: 0px 12px;
+    font-size: 14px;
+}
+.soloq > .elo-soloq{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+.tier{
+    line-height: 26px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.elo-info{
+    flex: 1 1 0%;
+    position: relative;
+    margin-left: 16px;
+    margin-top: 14px;
+}
+.pdl{
+    line-height: 16px;
+    margin-top: 6px;
+    font-size: 12px;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+}
+.elo-win-lose{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 2px;
+    
+}
+.unranked{
+    text-align: center;
+    width: 10px;
+    margin-left: 70px;
+}
+.icon img{
+    max-width: 30px;
+    gap: 10px;
+}
+
+.contents-Defeat{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #59343b;
+    padding: 4px 0px;
+    gap: 4px;
+}
+.contents-Victory{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #28344e;
+    padding: 4px 0px;
+    gap: 4px;
+}
+.inner{
+    display: flex;
+    padding: 0px 12px;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 0%;
+}
+.game-left{
+    width: 108px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--gray500);
+}
+.game-left-Header{
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+.game-type{
+    font-weight: 700px;
+}
+
+.divider{
+    width: 48px;
+    height: 1px;
+}
+.game-center{
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 2px;
+    flex: 1 1 0%;
+}
+.game-center-main{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 12px;
+}
+.game-center-main-info{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+    height: 58px;
+}
+.game-center-main-kda{
+    width: 108px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+.game-center-main-stats{
+    display: flex;
+    flex-direction: column;
+    height: 58px;
+    flex: 1 1 0%;
+    padding-left: 8px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+}
+.champion-main{
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 48px;
+}
+.champion-main img{
+    border-radius: 50%;
+}
+img{
+    border: 0px;
+    vertical-align: middle;
+    max-width: 100%;
+}
+.champion-main-level{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+    color: rgb(255, 255, 255);
+    background: rgb(32, 45, 55);
+    border-radius: 50%;
+}
+.champion-main{
+    display: flex;
+    gap: 2px;
+}
+.spellSperks{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.spell{
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.spell img{
+    aspect-ratio: 1 / 1;
+    min-width: 22px;
+}
+.rune{
+    display: flex;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.game-center-main-kda{
+    width: 108px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+.kda{
+    color: var(--gray400);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+}
+.d{
+color: red
+}
+.game-center-main-stats{
+    display: flex;
+    flex-direction: column;
+    height: 58px;
+    flex: 1 1 0%;
+    padding-left: 8px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+}
+.game-center-sub{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 8px;
+}
+.items{
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+}
+dl{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.item{
+    overflow: hidden;
+    min-width: 22px;
+    height: 22px;
+}
+.item img{
+    border-radius: 4px;
+}
+.game-rigth-teste{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2px 8px;
+    max-height: 88px;
+    margin-right: 70px;
+}
+.playerGame{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+}
+.icon-player{
+    max-height: 16px;
+    min-width: 16px;
+}
+.icon-player img{
+    border-radius: 4px;
+}
+.nick-player{
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+}
+.nick-summoner-other{
+    overflow: hidden;
+}
+.nick-summoner-player{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-sizing: border-box;
+    gap: 4px;
+    max-width: 100%;
+}
+.nickzada{
+    font-size: 12px;
+    line-height: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+.game{
+    display: flex;
+    width: 100%;
+    min-height: 96px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.level-header{
+    position: absolute;
+    z-index: 2;
+    top: 3px;
+    left: 18%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #414165;
+    background-color: #06061f;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+}
+.perfil-left{
+    position: relative;
+}
+.ResultGame{
+    font-weight: 700;
+}

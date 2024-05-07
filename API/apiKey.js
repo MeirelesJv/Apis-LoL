@@ -1,0 +1,1 @@
+module.exports = apiKey = 'RGAPI-4dc0e0e4-0922-4c12-af4b-8ef24720445e'; 
