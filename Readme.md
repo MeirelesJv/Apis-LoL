@@ -10,31 +10,37 @@ Este projeto pretende adentrar no mundo das APIs da Riot Games, investigando min
 ### Bibliotecas
 
 <ul>
-<li>EJS => Permite incorporar código JavaScript em arquivos HTML.</li>
-<li>Body-parser => Ele extrai esses dados recebidos pelo POST e os torna acessíveis no objeto req.body.</li>
-<li>Axios => Requisições HTTP em aplicações web</li>
+<li>EJS</li>
+<li>Body-parser</li>
+<li>Axios</li>
+<li>slugify</li>
 </ul>
 
 ### Frameworks
 
 <ul>
-<li>Nodemon => Reinicia o servidor sempre que realizar alguma mudança no codigo.</li>
-<li>Express => Lidar com Rotas HTTP.</li>
+<li>Nodemon</li>
+<li>Express</li>
 </ul>
 
-### Apis
+### Apis ```GET``` 
+```bash
+  /riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}
+  /riot/account/v1/accounts/by-puuid/{puuid}
+  /lol/match/v5/matches/by-puuid/{puuid}/ids
+  /lol/match/v5/matches/{matchId}
+  /lol/match/v5/matches/{matchId}/timeline 
+  /lol/spectator/v5/active-games/by-summoner/{encryptedPUUID} 
+  /lol/spectator/v5/featured-games
+  /lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}
+  /lol/summoner/v4/summoners/{encryptedSummonerId} 
+  /riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine} 
+  /riot/account/v1/accounts/by-puuid/{puuid}
+```
 
-```GET``` /riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine} => Get account by riot id<br>
-```GET``` /riot/account/v1/accounts/by-puuid/{puuid} => Get account by puuid<br>
-```GET``` /lol/match/v5/matches/by-puuid/{puuid}/ids => Get a list of match ids by puuid<br>
-```GET``` /lol/match/v5/matches/{matchId} => Get a match by match id<br>
-```GET``` /lol/match/v5/matches/{matchId}/timeline => Get a match timeline by match id<br>
-```GET``` /lol/spectator/v5/active-games/by-summoner/{encryptedPUUID} => Get current game information for the given puuid<br>
-```GET``` /lol/spectator/v5/featured-games => Get list of featured games<br>
-```GET``` /lol/summoner/v4/summoners/by-puuid/{encryptedPUUID} => Get a summoner by PUUID<br>
-```GET``` /lol/summoner/v4/summoners/{encryptedSummonerId} => Get a summoner by summoner ID<br>
+## Configurações
 
-```GET``` /riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine} => Obter conta por riot id
-```GET``` /riot/account/v1/accounts/by-puuid/{puuid} => Obter conta por puuid
->>>>>>> 0de4f43f189041c82135276ec6e008747ea658bb
+### Api Key
+
+Para acessar as Apis da Riot será necessario uma key, exigida pela riot para acessar as Apis, essa key é disponibilizada no proprio site da <a href="https://developer.riotgames.com/apis">Riot</a>. Como essa Key é valida por apenas 24 horas, na pasta *Apis-LoL-main\API\apiKey.js* está o module que disponibiliza a key para o resto do código
 
