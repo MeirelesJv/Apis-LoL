@@ -1,4 +1,4 @@
-# Api Nick
+# Api LoL
 
 ![GitHub Actions Workflow Status](https://img.shields.io/badge/Status-Progress-green)
 ![GitHub package.json version](https://img.shields.io/badge/Version-1.2-blue)
@@ -44,3 +44,29 @@ Este projeto pretende adentrar no mundo das APIs da Riot Games, investigando min
 
 Para acessar as Apis da Riot será necessario uma key, exigida pela riot para acessar as Apis, essa key é disponibilizada no proprio site da <a href="https://developer.riotgames.com/apis">Riot</a>. Como essa Key é valida por apenas 24 horas, na pasta *Apis-LoL-main\API\apiKey.js* está o module que disponibiliza a key para o resto do código
 
+### Start
+
+Basta iniciar o arquivo .bat que ele já estava funcionando no <a href="http://localhost:8080/">Local</a>
+
+## Desenvolvimentos Futuro
+
+<ul>
+<li>Busca por Região</li>
+  <ul>
+    <li>KR</li>
+    <li>NA</li>
+    <li>EUW</li>
+    <li>EUN</li>
+    <li>KR</li>
+    <li>JP</li>
+    <li>RU</li>
+    <li>OCE</li>
+  </ul>
+<li>Aumentar os jogos</li>
+  <ul>
+    <li>Valorant</li>
+    <li>TFT</li>
+    <li>League of Runeterra</li>
+  </ul>
+  <li>Melhorias na Interface</li>
+</ul>
