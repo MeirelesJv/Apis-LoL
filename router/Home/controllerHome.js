@@ -39,7 +39,6 @@ class player{
         this.winsFlex = winsFlex;
         this.lossesFlex = lossesFlex;
     }
-    
 };
 
 async function playerHome(puuid){

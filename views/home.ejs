@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>Home</title>
+    <title>Apis Riot</title>
 </head>
 <body>
     <heade class="header">
-        <a href="/" class="logo">Apis LoL</a>
+        <a href="/" class="logo">Apis Riot</a>
         <nav class="navbar">
             <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Portifolio</a>
+            <a href="https://meirelesjv.online/">Portifolio</a>
         </nav>
     </heade>
     
@@ -22,13 +20,33 @@
         <div class="background-section">
             <video src="/zedOto.mp4" autoplay loop muted></video>
         </div>
-        
-        <div class="search">
-            <form action="/home/Nick" method="POST">
-            <input type="text"  class="search-input" name="nick" placeholder="GameName#TagLine" required>
-            <button><span class="search-icon material-symbols-outlined">search</span></button>
-            </form>
+        <div class="pesquisa">
+            <div class="buttonsDiv">
+                <a href="https://github.com/MeirelesJv/Apis-LoL">
+                <button class="button">
+                    <p class="text">Git</p>
+                </button>
+                </a>
+                <a href="">
+                    <button class="button">
+                        <p class="text">Valorant</p>
+                    </button>
+                </a>
+                <a href="">
+                    <button class="button">
+                        <p class="text">TFT</p>
+                    </button>
+                </a>
+            </div>
+            <div class="search">
+                <form action="/home/Nick" method="POST">
+                <input type="text"  class="search-input" name="nick" placeholder="GameName#TagLine" required>
+                <button><span class="search-icon material-symbols-outlined">search</span></button>
+                </form>
+            </div>
         </div>
+        
+        
     </section>
 </body>
 </html>

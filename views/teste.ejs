@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Summoner</title>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">Apis LoL</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portifolio</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left-summoner">
+            <div class="icons-types">
+                <div class="icon">
+                    <a href="#" class="active"><img src="/iconLoL.png" alt="LoL"></a>
+                    <a href="/Valorant/:slug"><img src="/iconValorant.png" alt="Valorant"></a>
+                    <a href="/TFT/:slug"><img src="/iconTFT.png" alt="TFT"></a>
+                </div>
+            </div>
+            <div class="perfil-left">
+                <div class="left-perfil">
+                <div class="level-header"><%= summonerHome.summonerLevel %></div>
+                <div class="icon-summoner">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/profileicon/<%= summonerHome.profileIconId %>.png" alt="">
+                </div>
+                <div class="nick-summoner">
+                    <p><%= summonerHome.gameName %> #<%= summonerHome.tagLine %></p>
+                    <button>Update</button>
+                </div>
+                </div>
+            </div>
+
+            <div class="soloq">
+                <div class="header">Ranked Solo</div>
+                <div class="elo-soloq">
+                    <% if (summonerHome.tierSolo != undefined) { %>
+                    <div class="elo-summoner">
+                        <div class="elo-icon">
+                            <img src="/elo/Rank=<%= summonerHome.tierSolo %>.png" alt="img">
+                        </div>
+                        <div class="elo-info">
+                            <div class="tier"><%= summonerHome.tierSolo %> <%= summonerHome.rankSolo %></div>
+                            <div class="pdl"><%= summonerHome.leaguePointsSolo %> PDL</div>
+                            <div class="elo-win-lose">
+                                <%= summonerHome.winsSolo %>W <%= summonerHome.lossesSolo %>L
+                            </div>
+                        </div>
+                    </div>
+                    <% }else{ %>
+                        <div class="tier">
+                            <div class="unranked">Unranked</div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="soloq">
+                <div class="header">Ranked Flex</div>
+                <div class="elo-soloq">
+                    <% if (summonerHome.tierFlex != undefined) { %>
+                    <div class="elo-summoner">
+                        <div class="elo-icon">
+                            <img src="/elo/Rank=<%= summonerHome.tierFlex %>.png" alt="img">
+                        </div>
+                        <div class="elo-info">
+                            <div class="tier"><%= summonerHome.tierFlex %> <%= summonerHome.rankFlex %></div>
+                            <div class="pdl"><%= summonerHome.leaguePointsFlex %> PDL</div>
+                            <div class="elo-win-lose">
+                                <%= summonerHome.winsFlex %>W <%= summonerHome.lossesFlex %>L
+                            </div>
+                        </div>
+                    </div>
+                    <% }else{ %>
+                        <div class="tier">
+                            <div class="unranked">Unranked</div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="center-summoner">
+            <% for (const game of games) { %>
+                <div class="game">
+                    <div class="<%game.forEach(player=>{%><%if(player.me){%><%if(player.win){%>contents-Victory<%}else{%>contents-Defeat<%}%><%}%><%})%>">
+                        <div class="inner">
+                            <div class="game-left">
+                                <div class="game-left-Header">
+                                    <div class="game-type"><% game.forEach(player => { %><% if (player.me) { %><% if (player.queueId === 420) { %> Ranked Solo<% } else if (player.queueId === 440) { %>Ranked Flex <% } else if (player.queueId === 1700) { %>Modo Arena<% } %><% } %><% }) %></div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="game-left-Header">
+                                    <div class="ResultGame"><%game.forEach(player=>{%><%if(player.me){%><%if(player.win){%>Victory<%}else{%>Defeat<%}%><%}%><%})%></div>
+                                    <div class="time"><% game.forEach(player => { %><% if (player.me) { %><%= player.time %><% } %><% }) %></div>
+                                </div>
+                            </div>
+                            <div class="game-center">
+                                <div class="game-center-main">
+                                    <div class="game-center-main-info">
+                                        <a href="#" class="champion-main">
+                                            <img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<% game.forEach(player => { %><% if (player.me) { %><%= player.championName %><% } %><% }) %>.png" width = "48"
+                                            height="48" alt="<% game.forEach(player => { %><% if (player.me) { %><%= player.championName %><% } %><% }) %>">
+                                            <span class="champion-main-level"><% game.forEach(player => { %><% if (player.me) { %><%= player.champLevel %><% } %><% }) %></span>
+                                            
+                                        </a>
+                                        <div class="game-center-spellsPerks" style="display: flex;">
+                                            <div class="spellSperks">
+                                                <div class="spell" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/spell/SummonerFlash.png" alt="spell1" width = "22"
+                                                    height="22"></div>
+                                                <div class="spell" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/spell/SummonerSmite.png" alt="spell2" width = "22"
+                                                    height="22"></div>
+                                            </div>
+                                            <div class="spellSperks">
+                                                <% game.forEach(player => { %><% if (player.me) { %><%if(player.fristRune0 != 0){ %><div class="rune" style="position: relative;"><img src="/Runes/<% game.forEach(player => { %><% if (player.me) { %><%= player.fristRune0 %><% } %><% }) %>.png" alt="spell1" width = "22"height="22"></div><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                                <% game.forEach(player => { %><% if (player.me) { %><%if(player.secondRune0 != 0){ %><div class="rune" style="position: relative;"><img src="/Runes/<% game.forEach(player => { %><% if (player.me) { %><%= player.secondRune0 %><% } %><% }) %>.png" alt="spell1" width = "22"height="22"></div><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="game-center-main-kda">
+                                        <div class="kda">
+                                            <span><% game.forEach(player => { %><% if (player.me) { %><%= player.kills %><% } %><% }) %></span>
+                                            /
+                                            <span class="d"><% game.forEach(player => { %><% if (player.me) { %><%= player.deaths %><% } %><% }) %></span>
+                                            /
+                                            <span><% game.forEach(player => { %><% if (player.me) { %><%= player.assists %><% } %><% }) %></span>
+                                        </div>
+                                    </div>
+                                    <div class="game-center-main-stats">
+                                        <div class="cs">
+                                            <div class="" style="position: relative;">CS <% game.forEach(player => { %><% if (player.me) { %><%= player.totalMinionsKilled %><% } %><% }) %></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="game-center-sub">
+                                    <dl class="items">
+                                        <% game.forEach(player => { %><% if (player.me) { %><%if(player.item0 != 0){ %><dd><div class="item" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/item/<% game.forEach(player => { %><% if (player.me) { %><%if(player.item0 != 0){ %><%= player.item0 %><% } %><%}%><%})%>.png" alt="item5" width="22" height="22"></div></dd><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                        <% game.forEach(player => { %><% if (player.me) { %><%if(player.item1 != 0){ %><dd><div class="item" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/item/<% game.forEach(player => { %><% if (player.me) { %><%if(player.item1 != 0){ %><%= player.item1 %><% } %><%}%><%})%>.png" alt="item5" width="22" height="22"></div></dd><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                        <% game.forEach(player => { %><% if (player.me) { %><%if(player.item2 != 0){ %><dd><div class="item" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/item/<% game.forEach(player => { %><% if (player.me) { %><%if(player.item2 != 0){ %><%= player.item2 %><% } %><%}%><%})%>.png" alt="item5" width="22" height="22"></div></dd><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                        <% game.forEach(player => { %><% if (player.me) { %><%if(player.item3 != 0){ %><dd><div class="item" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/item/<% game.forEach(player => { %><% if (player.me) { %><%if(player.item3 != 0){ %><%= player.item3 %><% } %><%}%><%})%>.png" alt="item5" width="22" height="22"></div></dd><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                        <% game.forEach(player => { %><% if (player.me) { %><%if(player.item4 != 0){ %><dd><div class="item" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/item/<% game.forEach(player => { %><% if (player.me) { %><%if(player.item4 != 0){ %><%= player.item4 %><% } %><%}%><%})%>.png" alt="item5" width="22" height="22"></div></dd><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                        <% game.forEach(player => { %><% if (player.me) { %><%if(player.item5 != 0){ %><dd><div class="item" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/item/<% game.forEach(player => { %><% if (player.me) { %><%if(player.item5 != 0){ %><%= player.item5 %><% } %><%}%><%})%>.png" alt="item5" width="22" height="22"></div></dd><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                        <% game.forEach(player => { %><% if (player.me) { %><%if(player.item6 != 0){ %><dd><div class="item" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/item/<% game.forEach(player => { %><% if (player.me) { %><%if(player.item6 != 0){ %><%= player.item6 %><% } %><%}%><%})%>.png" alt="item5" width="22" height="22"></div></dd><% }else{ %><div class="item" style="position: relative;"></div><% } %><% } %><% }) %>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="game-rigth-teste">
+                                <div class="playerGame">
+                                        <% if (game.lane === 'TOP') { %><div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game.championName %>.png" width="16" height="16" alt="champ1"></div><% }else{ %><div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[0].championName %>.png" width="16" height="16" alt="champ1"></div><% } %>
+                                        <div class="nick-player">
+                                        <div class="nick-summoner" style="position: relative;">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[0].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[5].championName %>.png" width="16" height="16" alt="champ2"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner" style="position: relative;">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[5].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[1].championName %>.png" width="16" height="16" alt="champ3"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[1].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[6].championName %>.png" width="16" height="16" alt="champ4"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[6].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[2].championName %>.png" width="16" height="16" alt="champ5"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[2].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[7].championName %>.png" width="16" height="16" alt="champ6"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[7].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[3].championName %>.png" width="16" height="16" alt="champ7"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[3].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[8].championName %>.png" width="16" height="16" alt="champ8"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[8].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[4].championName %>.png" width="16" height="16" alt="champ9"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[4].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerGame">
+                                    <div class="icon-player" style="position: relative;"><img src="https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/<%= game[9].championName %>.png" width="16" height="16" alt="champ10"></div>
+                                    <div class="nick-player">
+                                        <div class="nick-summoner">
+                                            <a href="#" target="_blank">
+                                                <div class="nick-summoner-player">
+                                                    <span class="nickzada"><%= game[9].GameName %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    
+</body>
+<script>
+</script>
+</html>

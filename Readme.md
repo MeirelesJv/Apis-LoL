@@ -1,4 +1,4 @@
-# Api LoL
+# Api Riot
 
 ![GitHub Actions Workflow Status](https://img.shields.io/badge/Status-Progress-green)
 ![GitHub package.json version](https://img.shields.io/badge/Version-1.2-blue)
